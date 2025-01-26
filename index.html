@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Practice</title>
+    <style>
+        /* rem and em */
+        .rem-em-div{
+            text-align: center;
+            font-size: 30px;
+        }
+        .rem-em-div .para-1{
+            font-size: clamp(1rem, 5vw, 4rem);
+            color: blue;
+        }
+        .rem-em-div .para-2{
+            font-size: .5em;
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Welcome Additional Practice Moment</h1>
+    <ul>
+        <li>rem = Root em: is a relative unit in css, based on other values esp to the root element rather than being fixed like px. </li>
+        <li>em is a relative in unit in css based on its parent element's size.</li>
+    </ul>
+    <!-- Usage of rem and em -->
+     <div class="rem-em-div">
+        <p class="para-1">This is Bangladesh</p>
+        <p class="para-2">Huh! That one is Myanmar</p>
+     </div>
+
+</body>
+</html>
