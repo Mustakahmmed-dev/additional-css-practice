@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Additional Practice</title>
     <style>
+        body{
+            background-color: black;
+        }
         /* rem and em */
         .rem-em-div{
             text-align: center;
@@ -19,6 +22,51 @@
             color: green;
         }
 
+        /* Card Animation styles */
+        .card-animation{
+            width: 320px;
+            height: 250px;
+            background-color: rgba(0, 0, 0, 0.948);
+            margin: 0 auto;
+            position: relative;
+            border-radius: 8px;
+            color: gray;
+            padding: 20px;
+            font-size: 1.2rem;
+        }
+        @property --angle{
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+        .card-animation::after, .card-animation::before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            padding: 5px;
+            z-index: -1;
+            border-radius: 8px;
+            background-image: conic-gradient(from var(--angle), transparent 70%, blue);
+            animation: 3s spin linear infinite;
+           
+        }
+        .card-animation::before{
+            filter: blur(1.5rem);
+            opacity: 0.5;
+        }
+        @keyframes spin {
+            from {
+                --angle: 0deg;
+            }
+            to {
+                --angle: 360deg;
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -33,5 +81,9 @@
         <p class="para-2">Huh! That one is Myanmar</p>
      </div>
 
+     <!-- Border Animations -->
+      <div class="card-animation">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem pariatur asperiores, cupiditate perspiciatis impedit distinctio labore modi quia sunt deserunt ex, eum quo maiores quae esse quod. Omnis nesciunt provident eius? Iusto, officiis exercitationem accusantium ullam possimus laborum qui quisquam!
+      </div>
 </body>
 </html>
